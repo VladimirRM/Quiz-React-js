@@ -60,7 +60,9 @@ function App() {
 
   return (
     <div className="app">
-      <div className="quiz">
+
+      <div className="section-score"></div>
+      {/* <div className="quiz">
         <div className="question-section">
           <div className="question-count">
             <span>Question {currentQuestions + 1}</span> / {questions.length}
@@ -77,7 +79,7 @@ function App() {
           ))}
           ;
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
