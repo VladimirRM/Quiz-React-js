@@ -60,29 +60,32 @@ function App() {
 
   return (
     <div className="app">
-      <div className="section-score">
-        <div>
-          The right answer {score} from {questions.length}
-        </div>
-      </div>
-      {/* <div className="quiz">
-        <div className="question-section">
-          <div className="question-count">
-            <span>Question {currentQuestions + 1}</span> / {questions.length}
-          </div>
-          <div className="question-text">
-            {questions[currentQuestions].questionText}
+      {showScore ? (
+        <div className="section-score">
+          <div>
+            The right answer {score} from {questions.length}
           </div>
         </div>
-        <div className="answer-section">
-          {questions[currentQuestions].answerOptions.map((item) => (
-            <button onClick={() => handleAnswerOptionClick(item.isCorrect)}>
-              {item.answerText}
-            </button>
-          ))}
-          ;
+      ) : (
+        <div className="quiz">
+          <div className="question-section">
+            <div className="question-count">
+              <span>Question {currentQuestions + 1}</span> / {questions.length}
+            </div>
+            <div className="question-text">
+              {questions[currentQuestions].questionText}
+            </div>
+          </div>
+          <div className="answer-section">
+            {questions[currentQuestions].answerOptions.map((item) => (
+              <button onClick={() => handleAnswerOptionClick(item.isCorrect)}>
+                {item.answerText}
+              </button>
+            ))}
+            ;
+          </div>
         </div>
-      </div> */}
+      )}
     </div>
   );
 }
