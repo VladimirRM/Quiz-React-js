@@ -60,9 +60,10 @@ function App() {
 
   return (
     <div className="app">
-
       <div className="section-score">
-        <div>The right answer{score}</div>
+        <div>
+          The right answer {score} from {questions.length}
+        </div>
       </div>
       {/* <div className="quiz">
         <div className="question-section">
