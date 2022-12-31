@@ -40,7 +40,8 @@ const questions = [
 ];
 
 const [currentQuestions, setCurrentQuestions] = useState(0);
-const [score,setScore]= useState(0)
+const [score, setScore] = useState(0);
+const [showScore, setShowScore] = useState(false);
 
 const App = () => {
   return (
@@ -48,7 +49,7 @@ const App = () => {
       <div className="quiz">
         <div className="question-section">
           <div className="question-count">
-            <span>Question 1</span> /4
+            <span>Question 1 {currentQuestions} + 1</span> / {questions.length}
           </div>
           <div className="">Question 1</div>question-text
         </div>
