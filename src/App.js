@@ -1,55 +1,55 @@
 import React, { useState } from "react";
-
-const questions = [
-  {
-    questionText: "What a capital of USA ?",
-    answerOptions: [
-      { answerText: "Boston", isCorrect: false },
-      { answerText: "Washington", isCorrect: true },
-      { answerText: "New-york", isCorrect: false },
-      { answerText: "LOs-Angeles", isCorrect: false },
-    ],
-  },
-  {
-    questionText: "What is not a programming language?",
-    answerOptions: [
-      { answerText: "Go", isCorrect: false },
-      { answerText: "HTML", isCorrect: true },
-      { answerText: "Java-script", isCorrect: false },
-      { answerText: "Python", isCorrect: false },
-    ],
-  },
-  {
-    questionText: "Which company developed React?",
-    answerOptions: [
-      { answerText: "Amazon", isCorrect: false },
-      { answerText: "Mail", isCorrect: false },
-      { answerText: "Facebook", isCorrect: true },
-      { answerText: "Google", isCorrect: false },
-    ],
-  },
-  {
-    questionText: "What does not apply to the universe Marvel?",
-    answerOptions: [
-      { answerText: "Batman", isCorrect: true },
-      { answerText: "Hulk", isCorrect: false },
-      { answerText: "Iron-Man", isCorrect: false },
-      { answerText: "Avengers", isCorrect: false },
-    ],
-  },
-];
-
-const [currentQuestions, setCurrentQuestions] = useState(0);
-const [score, setScore] = useState(0);
-const [showScore, setShowScore] = useState(false);
+import "./App.css";
 
 const App = () => {
+  const questions = [
+    {
+      questionText: "What a capital of USA ?",
+      answerOptions: [
+        { answerText: "Boston", isCorrect: false },
+        { answerText: "Washington", isCorrect: true },
+        { answerText: "New-york", isCorrect: false },
+        { answerText: "LOs-Angeles", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "What is not a programming language?",
+      answerOptions: [
+        { answerText: "Go", isCorrect: false },
+        { answerText: "HTML", isCorrect: true },
+        { answerText: "Java-script", isCorrect: false },
+        { answerText: "Python", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Which company developed React?",
+      answerOptions: [
+        { answerText: "Amazon", isCorrect: false },
+        { answerText: "Mail", isCorrect: false },
+        { answerText: "Facebook", isCorrect: true },
+        { answerText: "Google", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "What does not apply to the universe Marvel?",
+      answerOptions: [
+        { answerText: "Batman", isCorrect: true },
+        { answerText: "Hulk", isCorrect: false },
+        { answerText: "Iron-Man", isCorrect: false },
+        { answerText: "Avengers", isCorrect: false },
+      ],
+    },
+  ];
+  const [currentQuestions, setCurrentQuestions] = useState(0);
+  const [score, setScore] = useState(0);
+  const [showScore, setShowScore] = useState(false);
+
   return (
     <div className="app">
       <div className="quiz">
         <div className="question-section">
           <div className="question-count">
-            <span>Question 1 {currentQuestions} + 1</span> / {questions.length}
+            <span>Question {currentQuestions + 1}</span> / {questions.length}
           </div>
           <div className="">Question 1</div>question-text
         </div>
