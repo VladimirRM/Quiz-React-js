@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 const questions = [
   {
@@ -39,7 +39,8 @@ const questions = [
   },
 ];
 
-const [currentQuestions, setCurrentQuestions]= useState( )
+const [currentQuestions, setCurrentQuestions] = useState(0);
+const [score,setScore]= useState(0)
 
 const App = () => {
   return (
