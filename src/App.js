@@ -51,13 +51,13 @@ const App = () => {
           <div className="question-count">
             <span>Question {currentQuestions + 1}</span> / {questions.length}
           </div>
-          <div className="">Question 1</div>question-text
+          <div className="">Question 1</div>
+          {questions[currentQuestions].questionText}
         </div>
         <div className="answer-section">
-          <button>Variant 1</button>
-          <button>Variant 2</button>
-          <button>Variant 3</button>
-          <button>Variant 4</button>
+          {questions[currentQuestions].answerOptions.map((item) => (
+            <button>{item.answerText}</button>
+          ))}
         </div>
       </div>
     </div>
