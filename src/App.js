@@ -44,6 +44,16 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
+  const handleAnswerOptionClick = () => {
+    if (isCorrect) {
+      setScore(score + 1);
+    }
+    const nextQuestion = currentQuestions + 1;
+    if (nextQuestion < questions.length) {
+      setCurrentQuestions(nextQuestion);
+    }
+  };
+
   return (
     <div className="app">
       <div className="quiz">
