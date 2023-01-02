@@ -58,6 +58,7 @@ const App = () => {
 
   return (
     <div className="app">
+      <div className="section-score"></div>
       {/* <div className="quiz">
         <div className="question-section">
           <div className="question-count">
