@@ -9,7 +9,7 @@ const App = () => {
         { answerText: "Boston", isCorrect: false },
         { answerText: "Washington", isCorrect: true },
         { answerText: "New-york", isCorrect: false },
-        { answerText: "LOs-Angeles", isCorrect: false },
+        { answerText: "Los-Angeles", isCorrect: false },
       ],
     },
     {
@@ -44,13 +44,15 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
-  const handleAnswerOptionClick = () => {
+  const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
     }
     const nextQuestion = currentQuestions + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestions(nextQuestion);
+    } else {
+      setShowScore(true);
     }
   };
 
@@ -66,7 +68,7 @@ const App = () => {
         </div>
         <div className="answer-section">
           {questions[currentQuestions].answerOptions.map((item) => (
-            <button>{item.answerText}</button>
+            <button onClick={()=>}>{item.answerText}</button>
           ))}
         </div>
       </div>
