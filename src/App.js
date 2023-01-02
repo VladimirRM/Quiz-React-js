@@ -56,6 +56,10 @@ const App = () => {
     }
   };
 
+  const refresh =()=>{
+    
+  }
+
   return (
     <div className="app">
       {showScore ? (
@@ -63,7 +67,7 @@ const App = () => {
           <div>
             The right answer {score} from {questions.length}
           </div>
-          <button className="refresh-btn">Try again</button>
+          <button className="refresh-btn" onClick={refresh}>Try again</button>
         </div>
       ) : (
         <div className="quiz">
