@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from "react";
 
 const App = () => {
   const questions = [
@@ -39,12 +39,12 @@ const App = () => {
       ],
     },
   ];
-  return (
-    <div className='app'>
-      
-      
-    </div>
-  )
-}
 
-export default App
+  const [currentQuestions, setCurrentQuestions] = useState(0);
+  const [score, setScore] = useState(0);
+  const [showScore, setShowScore] = useState(false);
+
+  return <div className="app"></div>;
+};
+
+export default App;
