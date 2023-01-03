@@ -1,14 +1,14 @@
 // import React, { useState } from "react";
 import "./App.css";
 
-function App() {
+const App = () => {
   const questions = [
     {
-      questionText: "Capital of USA?",
+      questionText: "What a capital of USA ?",
       answerOptions: [
         { answerText: "Boston", isCorrect: false },
         { answerText: "Washington", isCorrect: true },
-        { answerText: "New-York", isCorrect: false },
+        { answerText: "New-york", isCorrect: false },
         { answerText: "Los-Angeles", isCorrect: false },
       ],
     },
@@ -40,7 +40,6 @@ function App() {
       ],
     },
   ];
-
   const [currentQuestions, setCurrentQuestions] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -50,12 +49,17 @@ function App() {
       setScore(score + 1);
     }
     const nextQuestion = currentQuestions + 1;
-
     if (nextQuestion < questions.length) {
       setCurrentQuestions(nextQuestion);
     } else {
       setShowScore(true);
     }
+  };
+
+  const refresh = () => {
+    setCurrentQuestions(0);
+    setScore(0);
+    setShowScore(false);
   };
 
   return (
@@ -65,6 +69,9 @@ function App() {
           <div>
             The right answer {score} from {questions.length}
           </div>
+          <button className="refresh-btn" onClick={refresh}>
+            Try again
+          </button>
         </div>
       ) : (
         <div className="quiz">
@@ -72,9 +79,8 @@ function App() {
             <div className="question-count">
               <span>Question {currentQuestions + 1}</span> / {questions.length}
             </div>
-            <div className="question-text">
-              {questions[currentQuestions].questionText}
-            </div>
+            <div className="">Question 1</div>
+            {questions[currentQuestions].questionText}
           </div>
           <div className="answer-section">
             {questions[currentQuestions].answerOptions.map((item) => (
@@ -82,12 +88,11 @@ function App() {
                 {item.answerText}
               </button>
             ))}
-            ;
           </div>
         </div>
       )}
     </div>
   );
-}
+};
 
 // export default App;
