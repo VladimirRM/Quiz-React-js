@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import "./App.css";
+import React,{useState} from 'react'
 
 const App = () => {
   const questions = [
@@ -40,59 +39,12 @@ const App = () => {
       ],
     },
   ];
-  const [currentQuestions, setCurrentQuestions] = useState(0);
-  const [score, setScore] = useState(0);
-  const [showScore, setShowScore] = useState(false);
-
-  const handleAnswerOptionClick = (isCorrect) => {
-    if (isCorrect) {
-      setScore(score + 1);
-    }
-    const nextQuestion = currentQuestions + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestions(nextQuestion);
-    } else {
-      setShowScore(true);
-    }
-  };
-
-  const refresh = () => {
-    setCurrentQuestions(0);
-    setScore(0);
-    setShowScore(false);
-  };
-
   return (
-    <div className="app">
-      {showScore ? (
-        <div className="section-score">
-          <div>
-            The right answer {score} from {questions.length}
-          </div>
-          <button className="refresh-btn" onClick={refresh}>
-            Try again
-          </button>
-        </div>
-      ) : (
-        <div className="quiz">
-          <div className="question-section">
-            <div className="question-count">
-              <span>Question {currentQuestions + 1}</span> / {questions.length}
-            </div>
-            <div className="">Question 1</div>
-            {questions[currentQuestions].questionText}
-          </div>
-          <div className="answer-section">
-            {questions[currentQuestions].answerOptions.map((item) => (
-              <button onClick={() => handleAnswerOptionClick(item.isCorrect)}>
-                {item.answerText}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+    <div className='app'>
+      
+      
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
