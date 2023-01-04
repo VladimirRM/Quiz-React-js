@@ -49,7 +49,12 @@ const App = () => {
     if (isCorrect) {
       setScore(score + 1);
     }
-    const nextQuestion = currentQuestions
+    const nextQuestion = currentQuestions + 1;
+    if (nextQuestion < questions.length) {
+      setCurrentQuestions(nextQuestion);
+    } else {
+      setShowScore(true);
+    }
   };
 
   return (
@@ -64,7 +69,7 @@ const App = () => {
           </div>
           <div className="answer-section">
             {questions[currentQuestions].answerOptions.map((item) => (
-              <button>{item.answerText}</button>
+              <button onClick={()=>handleAnswerOptionClick(item.isCorrect)}>{item.answerText}</button>
             ))}
           </div>
         </div>
