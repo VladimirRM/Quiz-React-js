@@ -45,6 +45,11 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
+
+  const handleAnswerOptionClick =()=>{
+    
+  }
+
   return (
     <div className="app">
       <div className="quiz">
