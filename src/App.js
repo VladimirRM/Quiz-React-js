@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './App.css'
+import "./App.css";
 
 const App = () => {
   const questions = [
@@ -45,23 +45,24 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
-  return <div className="app">
-<div className="quiz">
-  <div className="question-section">
-    <div className="question-count">
-      <span>Question 1 {currentQuestions + 1}</span> / {questions.length}
+  return (
+    <div className="app">
+      <div className="quiz">
+        <div className="question-section">
+          <div className="question-count">
+            <span>Question 1 {currentQuestions + 1}</span> / {questions.length}
+          </div>
+          <div className="question-text">{questions[currentQuestions]}</div>
+          <div className="answer-section">
+            <button>Variant 1</button>
+            <button>Variant 2</button>
+            <button>Variant 3</button>
+            <button>Variant 4</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div className="question-text">Text question 1
-    </div>
-    <div className="answer-section">
-      <button>Variant 1</button>
-      <button>Variant 2</button>
-      <button>Variant 3</button>
-      <button>Variant 4</button>
-    </div>
-  </div>
-</div>
-  </div>;
+  );
 };
 
 export default App;
