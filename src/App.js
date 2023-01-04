@@ -45,10 +45,11 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
-
-  const handleAnswerOptionClick =()=>{
-    
-  }
+  const handleAnswerOptionClick = (isCorrect) => {
+    if (isCorrect) {
+      setScore(score + 1);
+    }
+  };
 
   return (
     <div className="app">
@@ -57,11 +58,13 @@ const App = () => {
           <div className="question-count">
             <span>Question 1 {currentQuestions + 1}</span> / {questions.length}
           </div>
-          <div className="question-text">{questions[currentQuestions].questionText}</div>
+          <div className="question-text">
+            {questions[currentQuestions].questionText}
+          </div>
           <div className="answer-section">
-          {questions[currentQuestions].answerOptions.map(item=>(
-            <button>{item.answerText}</button>
-          ))}
+            {questions[currentQuestions].answerOptions.map((item) => (
+              <button>{item.answerText}</button>
+            ))}
           </div>
         </div>
       </div>
