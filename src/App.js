@@ -49,6 +49,7 @@ const App = () => {
     if (isCorrect) {
       setScore(score + 1);
     }
+    const nextQuestion = currentQuestions
   };
 
   return (
