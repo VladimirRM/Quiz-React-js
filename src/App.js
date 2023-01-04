@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './App.css'
 
 const App = () => {
   const questions = [
@@ -48,7 +49,7 @@ const App = () => {
 <div className="quiz">
   <div className="question-section">
     <div className="question-count">
-      <span>Question 1 {currentQuestions + 1}</span> / {questions.lenth}
+      <span>Question 1 {currentQuestions + 1}</span> / {questions.length}
     </div>
     <div className="question-text">Text question 1
     </div>
