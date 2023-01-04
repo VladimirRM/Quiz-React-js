@@ -44,7 +44,15 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
-  return <div className="app"></div>;
+  return <div className="app">
+<div className="quiz">
+  <div className="question-section">
+    <div className="question-count">
+      <span>Question 1 </span> / 4
+    </div>
+  </div>
+</div>
+  </div>;
 };
 
 export default App;
