@@ -50,7 +50,14 @@ const App = () => {
     <div className="question-count">
       <span>Question 1 </span> / 4
     </div>
-    <div className="question-text">Text question 1</div>
+    <div className="question-text">Text question 1
+    </div>
+    <div className="answer-section">
+      <button>Variant 1</button>
+      <button>Variant 2</button>
+      <button>Variant 3</button>
+      <button>Variant 4</button>
+    </div>
   </div>
 </div>
   </div>;
