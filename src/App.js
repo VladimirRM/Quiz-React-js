@@ -40,7 +40,6 @@ const App = () => {
       ],
     },
   ];
-
   const [currentQuestions, setCurrentQuestions] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -57,23 +56,41 @@ const App = () => {
     }
   };
 
+  const refresh = () => {
+    setCurrentQuestions(0);
+    setScore(0);
+    setShowScore(false);
+  };
+
   return (
     <div className="app">
-      <div className="quiz">
-        <div className="question-section">
-          <div className="question-count">
-            <span>Question 1 {currentQuestions + 1}</span> / {questions.length}
+      {showScore ? (
+        <div className="section-score">
+          <div>
+            The right answer {score} from {questions.length}
           </div>
-          <div className="question-text">
+          <button className="refresh-btn" onClick={refresh}>
+            Try again
+          </button>
+        </div>
+      ) : (
+        <div className="quiz">
+          <div className="question-section">
+            <div className="question-count">
+              <span>Question {currentQuestions + 1}</span> / {questions.length}
+            </div>
+            <div className="">Question 1</div>
             {questions[currentQuestions].questionText}
           </div>
           <div className="answer-section">
             {questions[currentQuestions].answerOptions.map((item) => (
-              <button onClick={()=>handleAnswerOptionClick(item.isCorrect)}>{item.answerText}</button>
+              <button onClick={() => handleAnswerOptionClick(item.isCorrect)}>
+                {item.answerText}
+              </button>
             ))}
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
